@@ -1,13 +1,22 @@
 class Pessoa {
   // propriedades
-  String nome = '';
-  String endereco = '';
+  String _nome = '';
+  String _endereco = '';
 
   void setNome(String nome) {
-    this.nome = nome;
+    // não precisa mais de this
+    _nome = nome;
+  }
+
+  String getNome() {
+    return _nome;
   }
 
   void setEndereco(String endereco) {
-    this.endereco = endereco;
+    _endereco = endereco;
+  }
+
+  String getEndereco() {
+    return _endereco;
   }
 }
