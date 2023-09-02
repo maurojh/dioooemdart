@@ -4,6 +4,10 @@ abstract class Pessoa {
   // propriedades
   String _nome = '';
   String _endereco = '';
+  String _email = '';
+  String _celular = '';
+  String _token = '';
+
   TipoNotificacao _tipoNotificacao = TipoNotificacao.nenhum;
 
   void setNome(String nome) {
@@ -29,6 +33,30 @@ abstract class Pessoa {
 
   TipoNotificacao getTipoNotificacao() {
     return _tipoNotificacao;
+  }
+
+  void setEmail(String email) {
+    _email = email;
+  }
+
+  String getEmail() {
+    return _email;
+  }
+
+  void setCelular(String celular) {
+    _celular = celular;
+  }
+
+  String getCelular() {
+    return _celular;
+  }
+
+  void setToken(String token) {
+    _token = token;
+  }
+
+  String getToken() {
+    return _token;
   }
 
   Pessoa(String nome, String endereco, {TipoNotificacao tipoNotificacao = TipoNotificacao.nenhum}) {
