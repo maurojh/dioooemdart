@@ -1,7 +1,10 @@
+import 'package:dart_application_1/classes/enum/tipo_notificacao.dart';
+
 abstract class Pessoa {
   // propriedades
   String _nome = '';
   String _endereco = '';
+  TipoNotificacao _tipoNotificacao = TipoNotificacao.nenhum;
 
   void setNome(String nome) {
     // não precisa mais de this
@@ -20,9 +23,18 @@ abstract class Pessoa {
     return _endereco;
   }
 
-  Pessoa(String nome, String endereco) {
+  void setTipoNotificacao(TipoNotificacao tipoNotificacao) {
+    _tipoNotificacao = tipoNotificacao;
+  }
+
+  TipoNotificacao getTipoNotificacao() {
+    return _tipoNotificacao;
+  }
+
+  Pessoa(String nome, String endereco, {TipoNotificacao tipoNotificacao = TipoNotificacao.nenhum}) {
     _nome = nome;
     _endereco = endereco;
+    _tipoNotificacao = tipoNotificacao;
   }
 
   @override
@@ -30,6 +42,7 @@ abstract class Pessoa {
     return {
       'nome': _nome,
       'endereco': _endereco,
+      'tipoNotificacao': _tipoNotificacao,
     }.toString();
   }
 }
