@@ -20,6 +20,11 @@ class Pessoa {
     return _endereco;
   }
 
+  Pessoa(String nome, String endereco) {
+    _nome = nome;
+    _endereco = endereco;
+  }
+
   @override
   String toString() {
     return {
